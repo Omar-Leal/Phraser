@@ -10,7 +10,7 @@ import UIKit
 class HomeTableCell: UITableViewCell {
 
    static let cellID = "HomeTableCell"
-    
+   
     private let avatarImage: UIImageView = {
         let image = UIImageView()
         image.translatesAutoresizingMaskIntoConstraints = false
@@ -52,7 +52,37 @@ class HomeTableCell: UITableViewCell {
     
     private let replyButton: UIButton = {
         let btn = UIButton()
+        btn.translatesAutoresizingMaskIntoConstraints = false
+        btn.setImage(UIImage(systemName: "arrowshape.turn.up.left.2.fill"), for: .normal)
+        btn.tintColor = .secondaryLabel
+        return btn
     }()
+    
+    private let shareButton: UIButton = {
+        let btn = UIButton()
+        btn.translatesAutoresizingMaskIntoConstraints = false
+        btn.setImage(UIImage(systemName: "arrowshape.turn.up.left.2.fill"), for: .normal)
+        btn.tintColor = .secondaryLabel
+        return btn
+    }()
+    
+    private let likeButton: UIButton = {
+        let btn = UIButton()
+        btn.translatesAutoresizingMaskIntoConstraints = false
+        btn.setImage(UIImage(systemName: "hand.thumbsup"), for: .normal)
+        btn.tintColor = .secondaryLabel
+        return btn
+    }()
+    
+    private let convertToImage: UIButton = {
+        let btn = UIButton()
+        btn.translatesAutoresizingMaskIntoConstraints = false
+        btn.setImage(UIImage(systemName: "arrowshape.turn.up.left.2.fill"), for: .normal)
+        btn.tintColor = .secondaryLabel
+        return btn
+    }()
+    
+    
     
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -89,12 +119,28 @@ class HomeTableCell: UITableViewCell {
             postedText.topAnchor.constraint(equalTo: displayedName.topAnchor, constant: 20),
             postedText.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
             postedText.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -15),
-            
-            
+        ]
+        
+        
+        let replyBtn = [
+            replyButton.leadingAnchor.constraint(equalTo: postedText.leadingAnchor),
+            replyButton.topAnchor.constraint(equalTo: postedText.bottomAnchor),
+            replyButton.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -15)
+        ]
+        
+        let sharebtn = [
             
         ]
         
-        [ avatar, displayname, username, content ].forEach(NSLayoutConstraint.activate)
+        
+        let btn = [
+        ]
+        
+        let convertBtn = [
+        ]
+        
+        
+        [ avatar, displayname, username, content, replyBtn ].forEach(NSLayoutConstraint.activate)
        
     }
 }

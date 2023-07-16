@@ -17,6 +17,7 @@
 		E720303F2A62DFC00000F4B3 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E720303E2A62DFC00000F4B3 /* NotificationViewController.swift */; };
 		E72030422A62E0BC0000F4B3 /* DirectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72030412A62E0BC0000F4B3 /* DirectViewController.swift */; };
 		E7D6552E2A634D6400F479C9 /* HomeTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D6552D2A634D6400F479C9 /* HomeTableCell.swift */; };
+		E7F95A422A64416100F95586 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F95A412A64416100F95586 /* Theme.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		E720303E2A62DFC00000F4B3 /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
 		E72030412A62E0BC0000F4B3 /* DirectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectViewController.swift; sourceTree = "<group>"; };
 		E7D6552D2A634D6400F479C9 /* HomeTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableCell.swift; sourceTree = "<group>"; };
+		E7F95A412A64416100F95586 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 		E72030202A62BF7B0000F4B3 /* Posted */ = {
 			isa = PBXGroup;
 			children = (
+				E7F95A402A64414F00F95586 /* Utils */,
 				E72030352A62C09D0000F4B3 /* Main */,
 				E72030362A62DC8F0000F4B3 /* AppModules */,
 				E72030212A62BF7B0000F4B3 /* AppDelegate.swift */,
@@ -125,6 +128,14 @@
 				E72030412A62E0BC0000F4B3 /* DirectViewController.swift */,
 			);
 			path = DirectMessageView;
+			sourceTree = "<group>";
+		};
+		E7F95A402A64414F00F95586 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				E7F95A412A64416100F95586 /* Theme.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -197,6 +208,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E7F95A422A64416100F95586 /* Theme.swift in Sources */,
 				E720303C2A62DDD60000F4B3 /* SearchViewController.swift in Sources */,
 				E7D6552E2A634D6400F479C9 /* HomeTableCell.swift in Sources */,
 				E72030262A62BF7B0000F4B3 /* MainTabBarController.swift in Sources */,
