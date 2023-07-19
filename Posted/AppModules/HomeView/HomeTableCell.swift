@@ -10,16 +10,17 @@ import UIKit
 class HomeTableCell: UITableViewCell {
 
    static let cellID = "HomeTableCell"
-   
+   static let sampleText = "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a                        galley of type and scrambled it to make a type specimen book."
+    
     private let avatarImage: UIImageView = {
         let image = UIImageView()
         image.translatesAutoresizingMaskIntoConstraints = false
-        image.contentMode = .scaleToFill
-        image.layer.cornerRadius = 25
+        image.contentMode =         .scaleToFill
+        image.layer.cornerRadius =  25
         image.layer.masksToBounds = true
-        image.clipsToBounds = true
-        image.image = UIImage(systemName: "person")
-        image.backgroundColor = .yellow
+        image.clipsToBounds =       true
+        image.image =               UIImage(systemName: "person")
+        image.backgroundColor =     .yellow
         return image
     }()
     
@@ -34,17 +35,17 @@ class HomeTableCell: UITableViewCell {
     private let userName:UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = .systemFont(ofSize: 16, weight: .regular)
+        label.font =      .systemFont(ofSize: 16, weight: .regular)
         label.textColor = .secondaryLabel
-        label.text = "@tinita25"
+        label.text =      "@tinita25"
         return label
     }()
     
     private let postedText: UILabel = {
         let text = UILabel()
         text.translatesAutoresizingMaskIntoConstraints = false
-        text.text = "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
-        text.font = .systemFont(ofSize: 14, weight: .regular)
+        text.text =           sampleText
+        text.font =          .systemFont(ofSize: 14, weight: .regular)
         text.numberOfLines = 0
         
         return text
@@ -129,18 +130,19 @@ class HomeTableCell: UITableViewCell {
         ]
         
         let sharebtn = [
+            shareButton.leadingAnchor.constraint(equalTo: replyButton.trailingAnchor, constant: 60),
+            shareButton.centerYAnchor.constraint(equalTo: replyButton.centerYAnchor),
+            
             
         ]
         
-        
-        let btn = [
+        let likeBtnConstraints = [
+            likeButton.leadingAnchor.constraint(equalTo: shareButton.trailingAnchor)
         ]
-        
-        let convertBtn = [
-        ]
+     
         
         
-        [ avatar, displayname, username, content, replyBtn ].forEach(NSLayoutConstraint.activate)
+        [ avatar, displayname, username, content, replyBtn, sharebtn ].forEach(NSLayoutConstraint.activate)
        
     }
 }
