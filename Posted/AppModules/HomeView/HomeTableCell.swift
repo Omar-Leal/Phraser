@@ -54,7 +54,7 @@ class HomeTableCell: UITableViewCell {
     private let replyButton: UIButton = {
         let btn = UIButton()
         btn.translatesAutoresizingMaskIntoConstraints = false
-        btn.setImage(UIImage(systemName: "arrowshape.turn.up.left.2.fill"), for: .normal)
+        btn.setImage(UIImage(systemName: "bubble.right"), for: .normal)
         btn.tintColor = .secondaryLabel
         return btn
     }()
@@ -62,7 +62,7 @@ class HomeTableCell: UITableViewCell {
     private let shareButton: UIButton = {
         let btn = UIButton()
         btn.translatesAutoresizingMaskIntoConstraints = false
-        btn.setImage(UIImage(systemName: "arrowshape.turn.up.left.2.fill"), for: .normal)
+        btn.setImage(UIImage(systemName: "square.and.arrow.up.circle"), for: .normal)
         btn.tintColor = .secondaryLabel
         return btn
     }()
@@ -88,7 +88,14 @@ class HomeTableCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        [ avatarImage, displayedName, userName, postedText ].forEach(contentView.addSubview)
+        [ avatarImage,
+          displayedName,
+          userName,
+          postedText,
+          replyButton,
+          shareButton,
+          likeButton
+        ].forEach(contentView.addSubview)
         constraintsRules()
     }
     
@@ -118,14 +125,14 @@ class HomeTableCell: UITableViewCell {
         let content = [
             postedText.leadingAnchor.constraint(equalTo: displayedName.leadingAnchor),
             postedText.topAnchor.constraint(equalTo: displayedName.topAnchor, constant: 20),
-            postedText.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
-            postedText.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -15),
+            postedText.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -15),
+            //postedText.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -15),
         ]
         
         
         let replyBtn = [
             replyButton.leadingAnchor.constraint(equalTo: postedText.leadingAnchor),
-            replyButton.topAnchor.constraint(equalTo: postedText.bottomAnchor),
+            replyButton.topAnchor.constraint(equalTo: postedText.bottomAnchor, constant: 2),
             replyButton.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -15)
         ]
         
@@ -137,12 +144,20 @@ class HomeTableCell: UITableViewCell {
         ]
         
         let likeBtnConstraints = [
-            likeButton.leadingAnchor.constraint(equalTo: shareButton.trailingAnchor)
+            likeButton.leadingAnchor.constraint(equalTo: shareButton.trailingAnchor, constant: 60),
+            likeButton.centerYAnchor.constraint(equalTo: replyButton.centerYAnchor)
         ]
      
         
         
-        [ avatar, displayname, username, content, replyBtn, sharebtn ].forEach(NSLayoutConstraint.activate)
+        [ avatar,
+          displayname,
+          username,
+          content,
+          replyBtn,
+          sharebtn,
+          likeBtnConstraints
+        ].forEach(NSLayoutConstraint.activate)
        
     }
 }
