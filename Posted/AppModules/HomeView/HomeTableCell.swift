@@ -7,8 +7,16 @@
 
 import UIKit
 
-class HomeTableCell: UITableViewCell {
+protocol HomeTableViewCellDelegate: AnyObject {
+    func handleReplyButton()
+    func handleLikeButton()
+    func handleShareButton()
+}
 
+class HomeTableCell: UITableViewCell {
+    
+   weak var delegate: HomeTableViewCellDelegate?
+    
    static let cellID = "HomeTableCell"
    static let sampleText = "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a                        galley of type and scrambled it to make a type specimen book."
     
@@ -97,11 +105,35 @@ class HomeTableCell: UITableViewCell {
           likeButton
         ].forEach(contentView.addSubview)
         constraintsRules()
+        configureButtons()
     }
     
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    
+  /***  CONFIGURING BUTTONS */
+    @objc private func tapReply() {
+        delegate?.handleReplyButton()
     }
+    
+    @objc private func tapShare() {
+        delegate?.handleShareButton()
+    }
+    
+    @objc private func tapLike() {
+        delegate?.handleLikeButton()
+    }
+    
+    
+    private func configureButtons() {
+        replyButton.addTarget(self, action: #selector(tapReply), for: .touchUpInside)
+        shareButton.addTarget(self, action: #selector(tapShare), for: .touchUpInside)
+        likeButton.addTarget(self, action: #selector(tapLike), for: .touchUpInside)
+    }
+    
+    /***  CONFIGURING BUTTONS */
+    
+    
+    
+    
     
     
     private func constraintsRules() {
@@ -160,4 +192,11 @@ class HomeTableCell: UITableViewCell {
         ].forEach(NSLayoutConstraint.activate)
        
     }
+    
+    
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
 }

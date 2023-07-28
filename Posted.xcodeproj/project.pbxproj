@@ -16,6 +16,7 @@
 		E720303C2A62DDD60000F4B3 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E720303B2A62DDD60000F4B3 /* SearchViewController.swift */; };
 		E720303F2A62DFC00000F4B3 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E720303E2A62DFC00000F4B3 /* NotificationViewController.swift */; };
 		E72030422A62E0BC0000F4B3 /* DirectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72030412A62E0BC0000F4B3 /* DirectViewController.swift */; };
+		E761A5912A73EBC7009234A1 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E761A5902A73EBC7009234A1 /* ProfileVC.swift */; };
 		E7D6552E2A634D6400F479C9 /* HomeTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D6552D2A634D6400F479C9 /* HomeTableCell.swift */; };
 		E7F95A422A64416100F95586 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F95A412A64416100F95586 /* Theme.swift */; };
 /* End PBXBuildFile section */
@@ -32,6 +33,7 @@
 		E720303B2A62DDD60000F4B3 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		E720303E2A62DFC00000F4B3 /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
 		E72030412A62E0BC0000F4B3 /* DirectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectViewController.swift; sourceTree = "<group>"; };
+		E761A5902A73EBC7009234A1 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		E7D6552D2A634D6400F479C9 /* HomeTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableCell.swift; sourceTree = "<group>"; };
 		E7F95A412A64416100F95586 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -89,6 +91,7 @@
 		E72030362A62DC8F0000F4B3 /* AppModules */ = {
 			isa = PBXGroup;
 			children = (
+				E761A58F2A73EBA6009234A1 /* ProfileView */,
 				E72030402A62E0960000F4B3 /* DirectMessageView */,
 				E720303D2A62DFA70000F4B3 /* NotificationView */,
 				E720303A2A62DDBA0000F4B3 /* SearchView */,
@@ -128,6 +131,14 @@
 				E72030412A62E0BC0000F4B3 /* DirectViewController.swift */,
 			);
 			path = DirectMessageView;
+			sourceTree = "<group>";
+		};
+		E761A58F2A73EBA6009234A1 /* ProfileView */ = {
+			isa = PBXGroup;
+			children = (
+				E761A5902A73EBC7009234A1 /* ProfileVC.swift */,
+			);
+			path = ProfileView;
 			sourceTree = "<group>";
 		};
 		E7F95A402A64414F00F95586 /* Utils */ = {
@@ -208,6 +219,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E761A5912A73EBC7009234A1 /* ProfileVC.swift in Sources */,
 				E7F95A422A64416100F95586 /* Theme.swift in Sources */,
 				E720303C2A62DDD60000F4B3 /* SearchViewController.swift in Sources */,
 				E7D6552E2A634D6400F479C9 /* HomeTableCell.swift in Sources */,
